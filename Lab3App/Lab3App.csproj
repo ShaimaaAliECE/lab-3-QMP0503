@@ -49,7 +49,6 @@
     <Compile Include="CollectionBoard.cs" />
     <Compile Include="Diamond.cs" />
     <Compile Include="Displayable.cs" />
-    <Compile Include="IMagicWand.cs" />
     <Compile Include="MagicWand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

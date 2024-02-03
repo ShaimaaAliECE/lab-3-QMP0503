@@ -1,14 +1,16 @@
+using System;
+
 namespace Lab3App
 {
     class Axe: Tool
     {
-        protected Axe(string Description):base(Description){}
+        public Axe(string Description): base(Description) { }
         //grabbing description from parent
-        protected override DoAction()
+        public override void DoAction()
         {
             Console.WriteLine("Axe is Used");
         }
-        protected override Display()
+        public override void Display()
         {
             Console.WriteLine("Axe "+ this.Description + " is displayed");
         }

@@ -1,23 +1,27 @@
+using System;
+using System.Collections.Generic;
+
+
 namespace Lab3App
 {
-    public class Coin:Treasure
+     class Coin:Treasure
     {
-        protected int Value
+        protected int value
         {
             get;set;
         }
-        public Coin(int value, int score, string description): base(description,score)
+        public Coin(string description, int score, int value) : base(description,score)
         {
-            Value = value;
+            this.value = value;
         }
         public void UpdateTotalValue()
         {
-            int currentValue = Value + CollectionBoard.TotalValue;
-            Console.WriteLine("Total Value is updated to: "+currentValue);
+            CollectionBoard.TotalValue += value;
+            Console.WriteLine("Total Value is updated to: "+CollectionBoard.TotalValue);
         }
-        protected override void Display()
+        public override void Display()
         {
-            Console.WriteLine("Coin "+ this.Description+ " is displayed")
+            Console.WriteLine("Coin " + this.Description + " is displayed");
         }
         public override void AddMe(List<Collectable> collectable) { 
             base.AddMe(collectable);

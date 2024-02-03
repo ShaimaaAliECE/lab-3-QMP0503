@@ -1,16 +1,23 @@
+using System;
+using System.Collections.Generic;
+
 namespace Lab3App
 {
-    public abstract class Treasure : Collectable{
+     abstract class Treasure : Collectable{
         public int Score
         {
             get;set;
         }
+        public Treasure(string Description, int Score) : base(Description)
+        {
+            this.Score = Score;
+        }
         public void UpdateTotalScore()
         {
-            int currentScore = CollectionBoard.TotalScore + Score;
-            Console.WriteLine("Total Score is updated to: "+currentScore);
+            CollectionBoard.TotalScore += Score;
+            Console.WriteLine("Total Score is updated to: "+CollectionBoard.TotalScore);
         }
-        protected override void AddMe(List<Collectable> list){
+        public override void AddMe(List<Collectable> list){
             Console.WriteLine(this.Description + " Collected, Congrats!!!!");
             UpdateTotalScore();
         }   

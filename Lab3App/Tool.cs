@@ -1,10 +1,15 @@
+using System;
+using System.Collections.Generic;
+
 namespace Lab3App
 {
-    abstract class Tool : Collectable{
-        protected Tool(string Description) : base(Description){} //calls the parent class
-        void DoAction(){}
-        protected override addMe(List<Collectable> list){
-            Console.WriteLine(this.Description + " Collected, Congrats!!!!");
+    abstract class Tool : Collectable
+    {
+        public Tool(string Description):base(Description) { }   
+        public abstract void DoAction();
+        public override void AddMe(List<Collectable> list)
+        {
+            base.AddMe(list);
             DoAction();
         }
     }

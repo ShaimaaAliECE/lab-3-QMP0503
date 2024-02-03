@@ -1,14 +1,16 @@
+using System;
+
 namespace Lab3App
 {
-    class MagicWand : Tool
-    {
-        protected MagicWand(string Description): base(Description){}
-        protected override DoAcion(){
-            Console.WriteLine("MagicWand is Used")
+     class MagicWand : Tool
+     {
+        public MagicWand(string Description) : base(Description) { }
+        public override void DoAction(){
+            Console.WriteLine($"MagicWand is Used");
         }
-        protected override Display()
+        public override void Display()
         {
-            Console.WriteLine("MagicWand"+this.Description + "is displayed")
+            Console.WriteLine($"MagicWand" + this.Description + "is displayed");
         }
-    }
+     }
 }
